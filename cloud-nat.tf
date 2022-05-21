@@ -30,6 +30,6 @@ module "cloud-nat" {
   router                             = google_compute_router.router.name
   name                               = "nat-gke"
   nat_ip_allocate_option             = "MANUAL_ONLY"
-  nat_ips                            = "google_compute_address.terraform_nat_ip.address"
+  nat_ips                            = "google_compute_address.terraform_nat_ip.nat_addresses"
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
