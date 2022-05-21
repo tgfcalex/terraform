@@ -80,7 +80,7 @@ resource "google_compute_instance" "instance-cicd" {
   }
 }
 
-resource "google_compute_project_metadata" "alex" {
+resource "google_compute_project_metadata" "alex-key" {
   metadata = {
     ssh-keys = <<EOF
       alex:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbltnAvICqosll3+gVTeO44aXvwr3lapTjFH6hUlMlhi4v2dmt6oHPJdZ2/DHqa08JGBUR8RgQf0v1ho3oR/mLXYdAcpTSYJGQvYEYnYGTlZGZjVRBMDbO70pIxuQL3KwrT9a+1o2N/KRI+94Vr0A1/uFVOc+YhffdNLfyP40PNARmDOWTJIl5iyXlPN4Y3+xb4CQJFeXLaR95xZdC6/tmV7B499kqdK30Fw1t8x/6kdYSMkj1LN1+1gOGgwB0u++TCBTcw9cGp0emHhZnz2Jb0fvGa2XQGLtluP0evYcdPxlHh0cSv4fUskgUHHjKUxxQmcSv3TZBySTxDvVuf281 alex
