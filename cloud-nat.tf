@@ -16,6 +16,11 @@ resource "google_compute_router" "router" {
 }
 
 
+resource "google_compute_address" "terraform-nat-ip" {
+  name = "terraform-nat-ip"
+  region       = "${var.region}"
+}
+
 #Create Cloud nat
 module "cloud-nat" {
   source                             = "terraform-google-modules/cloud-nat/google"
@@ -25,6 +30,6 @@ module "cloud-nat" {
   router                             = google_compute_router.router.name
   name                               = "nat-gke"
   nat_ip_allocate_option             = "MANUAL_ONLY"
-  nat_ips                            = "35.247.41.239"
+  nat_ips                            = "google_compute_address.terraform-nat-ip.*.self_link"
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
