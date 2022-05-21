@@ -1,15 +1,7 @@
-module "module-network" {
-  source = "./modules/networks"
-}
-# Call our module and pass the var zone in, and get addresses out
-module "module-addresses" {
-  source = "./modules/address"
-}
-
 
 resource "google_compute_firewall" "allow-net" {
   name    = "allow-net"
-  network = module.module-network.network_name
+  network = var.network
   allow {
     protocol = "tcp"
     ports    = ["22"]
@@ -20,7 +12,7 @@ resource "google_compute_firewall" "allow-net" {
 # Create  Cloud Router
 resource "google_compute_router" "router" {
   name    = "nat-router"
-  network = module.module-network.network_name
+  network = var.network
   region  = "us-west1"
 }
 
