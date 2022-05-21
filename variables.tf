@@ -66,8 +66,7 @@ variable "cicd_in_ip" {
   type    = string
 }
 
-variable "nat_addresses" {
-  default     = []
-  type        = list(string)
-  description = "The self_link of GCP Addresses to associate with the NAT"
+variable "nat_ip_allocate_option" {
+  description = "Value inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY."
+  default     = "false"
 }
