@@ -13,12 +13,6 @@ variable "zone" {
   type    = string
 }
 
-variable "network" {
-  default = "vpc-alex"
-  type    = string
-}
-
-
 variable "instance_admin" {
   default = "admin"
   type    = string

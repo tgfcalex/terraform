@@ -1,7 +1,7 @@
 
 resource "google_compute_firewall" "allow-net" {
   name    = "allow-net"
-  network = var.network
+  network = "${var.vpc_namne}"
   allow {
     protocol = "tcp"
     ports    = ["22"]
@@ -12,7 +12,7 @@ resource "google_compute_firewall" "allow-net" {
 # Create  Cloud Router
 resource "google_compute_router" "router" {
   name    = "nat-router"
-  network = var.network
+  network = "${var.vpc_namne}"
   region  = "us-west1"
 }
 
