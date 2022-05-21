@@ -87,3 +87,12 @@ resource "google_compute_project_metadata" "alex" {
     EOF
   }
 }
+
+
+resource "google_compute_project_metadata" "mac" {
+  metadata = {
+    ssh-keys = <<EOF
+      alex:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCo3bgF13faZAvM8rqVi1q+OSzYucUiFfEuvHWmREhPmZ1/bLeA4fed8ifrVtDkj8D4DH02Y59lKRCxQP3kSY/sde++o8ohQXBknUdCKJAA/WSmDZhH+WbN+h4XW+z4Xo9b4z/OhT3DcVsmWmvF0noiWTkSQdKc3uT2q+ef6K+Iq1mBlw/0gMmnmjxfdD926kzo4hok9jKuo93cq4Wak8aWe5X7tQKTPczyywMPkQ/LID4VEUEqNp3lmhD+Xv1aNKj/mj08bF8BE/qrjP2D1q4RdipF0UG9Hf5fXC8wqJ9Q1UZUuNV20KoQm3tuc6ADjdavl4A4mQsGclEddZmztp2bAKDGMEoqt3MmIpmApIeymlYq3Bl5lmhh4vEMf2eOtf47gR4QFobKgDZLN1H9re/3Y73RrDwng5PN4Mo7lsD4ySCQoABzTMW8xnppj3K+2FtolFIrozNf1UD1D7PqSb4SM+TvOEIn+oaMew2srPRr9QHwGdwsgHjA8/cH/d1SlXM= alex
+    EOF
+  }
+}
