@@ -47,7 +47,7 @@ resource "google_compute_instance" "instance-admin" {
 resource "google_compute_instance" "instance-cicd" {
   name         = "${var.instance_cicd}"
   zone         = "${var.zone}"
-  machine_type = "e2-medium"
+  machine_type = "e2-standard-2"
 
 
   #開機硬碟
