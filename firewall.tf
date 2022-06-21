@@ -7,7 +7,7 @@ resource "google_compute_firewall" "alex-home" {
   name          = "alex-home"
   network       = "${var.vpc_namne}"
   priority      = "1000"
-  source_ranges = ["61.220.72.61","219.68.50.37,1.1.1.1,2.2.2.2"]
+  source_ranges = ["61.220.72.61","219.68.50.37"]
 }
 
 
